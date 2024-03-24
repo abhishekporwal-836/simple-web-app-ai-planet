@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: simple-web-app
-          image: abhishekporwal836iiitk/webapp:1.0.0
+          image: abhishekporwal836/webapp:1.0.0
           ports:
             - containerPort: 80
