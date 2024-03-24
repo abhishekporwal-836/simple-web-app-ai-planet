@@ -1,10 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
+  labels:
+    app.kubernetes.io/instance: default
   name: simple-web-app-svc
+  namespace: web-app
 spec:
+  ports:
+    - name: http
+      port: 80
   selector:
     app: simple-web-app
-  ports:
-    - port: 80
-      name: http
