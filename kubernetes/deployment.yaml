@@ -1,7 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  labels:
+    app.kubernetes.io/instance: default
   name: simple-web-app-deployment
+  namespace: web-app
 spec:
   replicas: 1
   selector:
@@ -13,7 +16,7 @@ spec:
         app: simple-web-app
     spec:
       containers:
-        - name: simple-web-app
-          image: abhishekporwal836/webapp:latest
+        - image: 'abhishekporwal836/webapp:latest'
+          name: simple-web-app
           ports:
             - containerPort: 80
